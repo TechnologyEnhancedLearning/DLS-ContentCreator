@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<!– saved from url=(0014)about:internet –> 
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>DLS Learning Materials</title>
+    <link href="XXitsplearningcssXX" rel="stylesheet" />
+    <link href="XXanimationcssXX" rel="stylesheet" />
+    <link href="XXbootstrapcssXX" rel="stylesheet" />
+    <link rel="stylesheet" href="XXjquery_ui_cssXX"/>
+
+    <script src="XXjquery_jsXX"></script>
+    <script src="XXjquery_ui_jsXX"></script>
+    <script src="XXcrosshair-minXX"></script>
+    <script src="XXbootstrap_jsXX"></script>    
+    <script src="XXitsplearning_jsXX"></script>
+    <style>
+        #content {
+            height: XXImageHeightXXpx;
+            width: XXImageWidthXXpx;
+            position: relative;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            transform-origin: center center;
+            background-color: #CDCDCD;
+        }
+
+        #scaleable-wrapper {
+            padding: 1%;
+            position: relative;
+            background: #ABABAB;
+        }
+        #followimg {
+  position: absolute;
+  z-index: 1000;
+  filter: alpha(opacity=50);
+  opacity:0.5;
+}
+        .object:not(.selected-element) {
+       -moz-transform: translate(-1px,-1px);
+    -ms-transform: translate(-1px,-1px);
+    -o-transform: translate(-1px,-1px);
+    -webkit-transform: translate(-1px,-1px);
+    transform: translate(-1px,-1px);
+    -moz-box-sizing: content-box !important;
+    -webkit-box-sizing: content-box !important;
+    box-sizing: content-box !important;
+            border: 1px dotted rgba(255, 0, 255, 0.4);
+        }
+        .selection-box {
+    position:    absolute;
+    z-index: 1000;
+    background: transparent;
+    border:     1px dotted #000;
+  }
+        .xhair{
+            cursor:crosshair;
+        }
+        .stylestring{}
+    </style>
+</head>
+<body>
+    <div class="scaleable-wrapper" id="scaleable-wrapper">
+        <div id="content">
+            <div style="background-image: url('XXBkgImageSrcXX');width:XXImageWidthXXpx; height:XXImageHeightXXpx;" class="bkg-image" />
+            <div id='output-objects'></div>
+            <div class="text-box draggable XXTBClassXX" style="left:XXLeftPosXXpx;top:XXRightPosXXpx;z-index:200;">
+                <h2 class="sr-only">##PageType##</h2><span aria-hidden="true" style="font-size: 11px; padding-bottom: 1.9em;">##PageType##</span>
+                <div class="instruction-text">
+                    <div id='output-inst-text'></div>
+                </div>
+                <a href='#' title='Exit' role='button' class='exit-button'><span class='sr-only'>Exit Learning</span></a> <a href='#' title='Back' role="button" class='back-button'><span class='sr-only'>Previous Page</span></a><a href='#' title='Next' role="button" class='next-button'><span class='sr-only'>Next Page</span></a>
+                <progress value="00065" max="000100"></progress>
+            </div>
+            <!--quizq-->
+        </div>
+    </div>
+    <div class="crosshair-legend" style="display: none;"></div>
+    <script>
+        var vInserting = false;
+        var $content = $('#content')
+        //Make elements with draggable class draggable using jquery-ui
+        $(function () {
+            $(".draggable, .object").draggable({
+                cursor: "move",
+                opacity: 0.5,
+                drag: function (e, ui) {
+                    // scale the delta by the zoom factor
+                    var dx = ui.position.left - ui.originalPosition.left;
+                    var dy = ui.position.top - ui.originalPosition.top;
+
+                    ui.position.left = (ui.originalPosition.left / scale) + (dx / scale);
+                    ui.position.top = (ui.originalPosition.top / scale) + (dy / scale);
+                }
+            });
+            setTimeout(function () { window.external.SaveThumb(); }, 500);
+        });
+        //Get the drag finish position of the text-box element and send the updated position to the htmlhelper class SetInstructionLocation sub:
+        $(".text-box").on("dragstop", function (event, ui) {
+            var x = ($(this).offset().left / scale) - ($content.offset().left / scale);
+            var y = ($(this).offset().top / scale) - ($content.offset().top / scale);
+            window.external.SetInstructionLocation(x, y);
+        });
+        //Get the drag finish position of the object element and send the updated position to the htmlhelper class SetObjectLocation sub:
+        $(".object").on("dragstop", function (event, ui) {
+            var x = ($(this).offset().left / scale) - ($content.offset().left / scale);
+            var y = ($(this).offset().top / scale) - ($content.offset().top / scale);
+            window.external.SetObjectLocation($(this).attr('id'), x, y);
+        });
+        //Update the instruction text:
+        function updateInstructionText(insthtml, loch) {
+            $(".instruction-text").html(insthtml);
+            $(".text-box").offset({ left: loch + $content.offset.left() });
+        }
+        $(".text-box").click(function () {
+            window.external.InstructionBoxClick();
+        });
+        //Allow a crosshair to be viewed on the page:
+        function doCrossHair() {
+            vInserting = true;
+            $(".follow").remove();
+            $('<div>').removeClass('selection-box');
+            $content.off('mousedown');
+            $content.off('mousemove');
+            $(".bkg-image, .object, .follow").mouseup(function (e) {
+                window.external.SetInsertObjectPosition((e.clientX - $content.offset().left) / scale, (e.clientY - $content.offset().top) / scale);
+            });
+            $content.addClass("xhair");
+        };
+        function doImageCrosshair(apphtml) {
+            vInserting = true;
+            $('<div>').removeClass('selection-box');
+            $content.off('mousedown');
+            $content.off('mousemove');
+            $("#scaleable-wrapper").append(apphtml);
+            $(".bkg-image, .object, .follow").mousemove(function (e) {
+                $('.follow').css({ 'top': e.clientY, 'left': e.clientX, 'width': $(this)[0].naturalWidth * scale, 'height': $(this)[0].naturalHeight * scale});
+            });
+            $(".bkg-image, .object, .follow").mouseup(function (e) {
+                window.external.SetInsertObjectPosition(($('.follow').offset().left - $content.offset().left) / scale, ($('.follow').offset().top - $content.offset().top) / scale);
+                $('<div>').removeClass('xhair');
+                $(".follow").remove();
+                vInserting = false;
+            }).addClass("xhair");
+        };
+        //Draw a rectangle on the page:
+        function doMarquee() {
+            $(".follow").remove();
+            var $container = $('.bkg-image');
+            var $selection = $('<div>').addClass('selection-box');
+            $container.crosshair({ scale: scale });
+            $container.on('mousedown', function (e) {
+                var click_y = (e.pageY - $content.offset().top) / scale,
+                    click_x = (e.pageX - $content.offset().left) / scale;
+
+                $selection.css({
+                    'top': click_y,
+                    'left': click_x,
+                    'width': 0,
+                    'height': 0
+                });
+                $selection.appendTo($container);
+
+                $container.on('mousemove', function (e) {
+                    var move_x = (e.pageX - $content.offset().left) / scale,
+                        move_y = (e.pageY - $content.offset().top) / scale,
+                        width = Math.abs(move_x - click_x),
+                        height = Math.abs(move_y - click_y),
+                        new_x, new_y;
+
+                    new_x = (move_x < click_x) ? (click_x - width) : click_x;
+                    new_y = (move_y < click_y) ? (click_y - height) : click_y;
+
+                    $selection.css({
+                        'width': width,
+                        'height': height,
+                        'top': new_y,
+                        'left': new_x
+                    });
+
+                }).on('mouseup', function (e) {
+                    $container.off('mousemove');
+                    $container.off('mousedown');
+                    $('<div>').removeClass('selection-box');
+                    //console.log($selection.css);
+                    window.external.SetInsertObjectPosition(($selection.offset().left - $content.offset().left) / scale, ($selection.offset().top - $content.offset().top) / scale, $selection.outerWidth(), $selection.outerHeight());
+                    $selection.remove();
+                    $('<div>').removeClass('xhair');
+                }).addClass("xhair");
+            });
+        };
+        //Select the mouse-up object:
+        $(".object").mousedown(function () { if (vInserting === false) { window.external.SelectObject($(this).attr('id')); } });
+        function SelectObject(id) {
+            $(".selected-element").removeClass("selected-element");
+            $('<div>').removeClass('xhair');
+            $(".ui-resizable").resizable('destroy');
+            var domObject = document.getElementById(id);
+            if (typeof domObject != "undefined" && domObject != null) {
+                domObject.className = domObject.className + " selected-element";
+                $(".selected-element").resizable({
+                    //correct sizing to take account of scaling:
+                    minWidth: -($content.width()) * 10,
+                    minHeight: -($content.height()) * 10,
+                    resize: function (event, ui) {
+                        var changeWidth = ui.size.width - ui.originalSize.width;
+                        var newWidth = ui.originalSize.width + changeWidth / scale;
+                        var changeHeight = ui.size.height - ui.originalSize.height;
+                        var newHeight = ui.originalSize.height + changeHeight / scale;
+                        ui.size.width = newWidth;
+                        ui.size.height = newHeight;
+                    }
+                });
+                //Get and set the size of the object after resizing:
+                $(".selected-element").on("resizestop", function (event, ui) { window.external.SetObjectSize($(this).attr('id'), $(this).outerWidth(), $(this).outerHeight()) });
+                return true;
+            }
+            else {
+                return false;
+            }
+        };
+        $(".object").click(function (e) {
+            if (vInserting === false) { e.stopPropagation(); }
+        });
+        //Deselect object when background clicked:
+        $(".bkg-image").click(function () {
+            DeselectObjects();
+        });
+        //Open start html editor when text double clicked:
+        $(".start-text").dblclick(function () { window.external.EditStartHtml() });
+        function DeselectObjects() {
+            window.external.SelectObject(''); $('<div>').removeClass('xhair');
+            $(".ui-resizable").resizable('destroy');
+            $(".object").removeClass("selected-element");
+            $(".hair, .crosshair-legend").hide();
+            vInserting = false;
+        };
+        function PositionObject(id, H, W, X, Y) {
+            $(".object").removeClass("selected-element");
+            var domObject = document.getElementById(id);
+            if (typeof domObject != "undefined" && domObject != null) {
+                domObject.className = domObject.className + " selected-element";
+                $(".selected-element").outerWidth(W + 4).outerHeight(H + 4).css({ top: Y, left: X, position: 'absolute' });
+                return true;
+            }
+        };
+        function ToggleObject(id, hide) {
+            if (hide == 1) {
+                if ($("#" + id).hasClass("hiddenobj") == false) { $("#" + id).addClass("hiddenobj"); }
+
+            } else {
+                $("#" + id).removeClass("hiddenobj");
+            }
+
+        };
+        function SetInnerHTML(id, sHTML) {
+            html = $.parseHTML(sHTML);
+            $("#" + id).html(html);
+        }
+
+        function customScripts() { };
+    </script>
+
+    <script src="XXplayerscaling_jsXX"></script>
+</body>
+    
+</html>

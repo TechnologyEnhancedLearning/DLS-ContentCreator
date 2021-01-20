@@ -1,0 +1,614 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AC209E22-750B-4D8C-ABAC-1BB30AAF4E6A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ITSP_CDA</RootNamespace>
+    <AssemblyName>ITSP-CDA</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <StartupObject>ITSP_CDA.Program</StartupObject>
+    <FileAlignment>512</FileAlignment>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>C:\Users\admin\Desktop\ITSP-CC\publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup>
+    <MyType>WindowsForms</MyType>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>ITSP_CDA.My.MyApplication</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>9CED3FF7894E3D115DD7889BF24A8358A7FC4422</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>DLS-ContentCreator_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>DLS-ContentCreator_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML">
+      <HintPath>..\..\..\..\..\..\ASP.NET DLLs\ClosedXMLNET4\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.BonusSkins.v19.2" />
+    <Reference Include="DevExpress.Data.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Images.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v19.2.Core, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v19.2.Core" />
+    <Reference Include="DevExpress.RichEdit.v19.2.Export, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v19.2.Core, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v19.2.Core, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v19.2" />
+    <Reference Include="DevExpress.Sparkline.v19.2.Core" />
+    <Reference Include="DevExpress.XtraEditors.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraRichEdit.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\..\..\..\..\..\ASP.NET DLLs\dotnetzip\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="LiquidTechnologies.Runtime.Net45, Version=14.1.5.6733, Culture=neutral, PublicKeyToken=64bee40f6e1c14f0, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Liquid Technologies\Liquid XML 2016\XmlDataBinder14\Redist14\DotNet\LiquidTechnologies.Runtime.Net45.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmProjectSettingsNew.Designer.vb">
+      <DependentUpon>frmProjectSettingsNew.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmProjectSettingsNew.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditQuizQuestion.Designer.vb">
+      <DependentUpon>EditQuizQuestion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EditQuizQuestion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditText.Designer.vb">
+      <DependentUpon>EditText.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EditText.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gdi32.vb" />
+    <Compile Include="jsgenerate.vb" />
+    <Compile Include="Module1.vb" />
+    <Compile Include="PropertiesFollowMousePointerBehaviour.Designer.vb">
+      <DependentUpon>PropertiesFollowMousePointerBehaviour.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PropertiesFollowMousePointerBehaviour.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PropertiesAnimateBehaviour.Designer.vb">
+      <DependentUpon>PropertiesAnimateBehaviour.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PropertiesAnimateBehaviour.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="AutoHeightPanel.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BackstageViewLabel.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CDAMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CDAMain.Designer.vb">
+      <DependentUpon>CDAMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="cdasettings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>cdasettings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="CDASplash.Designer.vb">
+      <DependentUpon>CDASplash.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CDASplash.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PropertiesChangeMousePointerBehaviour.Designer.vb">
+      <DependentUpon>PropertiesChangeMousePointerBehaviour.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PropertiesChangeMousePointerBehaviour.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PropertiesCustomCssBehaviour.Designer.vb">
+      <DependentUpon>PropertiesCustomCssBehaviour.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PropertiesCustomCssBehaviour.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PropertiesCustomJavaScriptBehaviour.Designer.vb">
+      <DependentUpon>PropertiesCustomJavaScriptBehaviour.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PropertiesCustomJavaScriptBehaviour.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PropertiesDragBehaviour.Designer.vb">
+      <DependentUpon>PropertiesDragBehaviour.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PropertiesDragBehaviour.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ExportBSVControl.Designer.vb">
+      <DependentUpon>ExportBSVControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ExportBSVControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmProjectSettings.Designer.vb">
+      <DependentUpon>frmProjectSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmProjectSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HTMLHelper.vb" />
+    <Compile Include="PropertiesKeyboardShortcutBehaviour.Designer.vb">
+      <DependentUpon>PropertiesKeyboardShortcutBehaviour.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PropertiesKeyboardShortcutBehaviour.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PropertiesMouseInteractionBehaviour.Designer.vb">
+      <DependentUpon>PropertiesMouseInteractionBehaviour.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PropertiesMouseInteractionBehaviour.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MRUArrayList.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectManager.Designer.vb">
+      <DependentUpon>ObjectManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectManager.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ObjectProperties.Designer.vb">
+      <DependentUpon>ObjectProperties.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectProperties.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PageListControl.Designer.vb">
+      <DependentUpon>PageListControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PageListControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PageSettings.Designer.vb">
+      <DependentUpon>PageSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PageSettings.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProjectSettings.Designer.vb">
+      <DependentUpon>ProjectSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectSettings.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PropertiesPasswordBehaviour.Designer.vb">
+      <DependentUpon>PropertiesPasswordBehaviour.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PropertiesPasswordBehaviour.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PropertiesResizeBehaviour.Designer.vb">
+      <DependentUpon>PropertiesResizeBehaviour.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PropertiesResizeBehaviour.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PropertiesScormPublish.Designer.vb">
+      <DependentUpon>PropertiesScormPublish.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PropertiesScormPublish.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PropertiesSelectableBehaviour.Designer.vb">
+      <DependentUpon>PropertiesSelectableBehaviour.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PropertiesSelectableBehaviour.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PropertiesSpinnerBehaviour.Designer.vb">
+      <DependentUpon>PropertiesSpinnerBehaviour.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PropertiesSpinnerBehaviour.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PropertiesTextBehaviour.Designer.vb">
+      <DependentUpon>PropertiesTextBehaviour.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PropertiesTextBehaviour.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PropertiesTooltipBehaviour.Designer.vb">
+      <DependentUpon>PropertiesTooltipBehaviour.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PropertiesTooltipBehaviour.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RecentItemsControl.Designer.vb">
+      <DependentUpon>RecentItemsControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RecentItemsControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RibbonApplicationUserControl.Designer.vb">
+      <DependentUpon>RibbonApplicationUserControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RibbonApplicationUserControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ScormPublish.Designer.vb">
+      <DependentUpon>ScormPublish.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ScormPublish.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StartForm.Designer.vb">
+      <DependentUpon>StartForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StartForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="upgradefile.vb" />
+    <Compile Include="User32.vb" />
+    <Compile Include="utility.vb" />
+    <EmbeddedResource Include="ExportBSVControl.resx">
+      <DependentUpon>ExportBSVControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProjectSettingsNew.resx">
+      <DependentUpon>frmProjectSettingsNew.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditQuizQuestion.resx">
+      <DependentUpon>EditQuizQuestion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditText.resx">
+      <DependentUpon>EditText.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertiesFollowMousePointerBehaviour.resx">
+      <DependentUpon>PropertiesFollowMousePointerBehaviour.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertiesAnimateBehaviour.resx">
+      <DependentUpon>PropertiesAnimateBehaviour.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CDAMain.resx">
+      <DependentUpon>CDAMain.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CDASplash.resx">
+      <DependentUpon>CDASplash.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertiesChangeMousePointerBehaviour.resx">
+      <DependentUpon>PropertiesChangeMousePointerBehaviour.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertiesCustomCssBehaviour.resx">
+      <DependentUpon>PropertiesCustomCssBehaviour.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertiesCustomJavaScriptBehaviour.resx">
+      <DependentUpon>PropertiesCustomJavaScriptBehaviour.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertiesDragBehaviour.resx">
+      <DependentUpon>PropertiesDragBehaviour.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProjectSettings.resx">
+      <DependentUpon>frmProjectSettings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertiesKeyboardShortcutBehaviour.resx">
+      <DependentUpon>PropertiesKeyboardShortcutBehaviour.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertiesMouseInteractionBehaviour.resx">
+      <DependentUpon>PropertiesMouseInteractionBehaviour.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ObjectManager.resx">
+      <DependentUpon>ObjectManager.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ObjectProperties.resx">
+      <DependentUpon>ObjectProperties.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageListControl.resx">
+      <DependentUpon>PageListControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageSettings.resx">
+      <DependentUpon>PageSettings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectSettings.resx">
+      <DependentUpon>ProjectSettings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertiesPasswordBehaviour.resx">
+      <DependentUpon>PropertiesPasswordBehaviour.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertiesResizeBehaviour.resx">
+      <DependentUpon>PropertiesResizeBehaviour.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertiesScormPublish.resx">
+      <DependentUpon>PropertiesScormPublish.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertiesSelectableBehaviour.resx">
+      <DependentUpon>PropertiesSelectableBehaviour.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertiesSpinnerBehaviour.resx">
+      <DependentUpon>PropertiesSpinnerBehaviour.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertiesTextBehaviour.resx">
+      <DependentUpon>PropertiesTextBehaviour.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertiesTooltipBehaviour.resx">
+      <DependentUpon>PropertiesTooltipBehaviour.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecentItemsControl.resx">
+      <DependentUpon>RecentItemsControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RibbonApplicationUserControl.resx">
+      <DependentUpon>RibbonApplicationUserControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScormPublish.resx">
+      <DependentUpon>ScormPublish.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StartForm.resx">
+      <DependentUpon>StartForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="cdasettings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>cdasettings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="DLS-ContentCreator_TemporaryKey.pfx" />
+    <None Include="My Project\DataSources\mstns.ITSPUnit.datasource" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CDASchema\ITSPCDALib.vbproj">
+      <Project>{a4d35419-915b-469c-baed-0010b5042a8f}</Project>
+      <Name>ITSPCDALib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WpfThumbnailer\Thumbnailer.vbproj">
+      <Project>{2bb7f120-456b-4d09-bd39-66d412ba31c7}</Project>
+      <Name>Thumbnailer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adlcp_rootv1p2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\animation_css.bmp" />
+    <None Include="Resources\Arrow.bmp" />
+    <None Include="Resources\Arrow.png" />
+    <None Include="Resources\Arrow_Down.png" />
+    <None Include="Resources\Arrow_Left.png" />
+    <None Include="Resources\Arrow_Up.png" />
+    <Content Include="favicon.ico" />
+    <Content Include="Resources\AssessOutcome.html" />
+    <Content Include="Resources\blank_thmb.png" />
+    <None Include="Resources\cross.png" />
+    <Content Include="Resources\CC-Logo-MD.png" />
+    <Content Include="Resources\css\bootstrap.min.css" />
+    <Content Include="Resources\DiagnosticOutcome.html" />
+    <Content Include="Resources\imsmanifest.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Resources\itspplayer-sco.html" />
+    <Content Include="Resources\itspplayer.html" />
+    <Content Include="Resources\js\APIWrapper.js" />
+    <Content Include="Resources\js\bootstrap.min.js" />
+    <Content Include="Resources\js\itsp-content.js" />
+    <Content Include="Resources\js\itsp-tracking-sco.js" />
+    <Content Include="Resources\js\itsp-tracking.js" />
+    <Content Include="Resources\js\SCOFunctions.js" />
+    <Content Include="Resources\metadata.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Resources\navimages\exit_F1.png" />
+    <Content Include="Resources\navimages\exit_F2.png" />
+    <Content Include="Resources\navimages\pass.png" />
+    <Content Include="Resources\navimages\pass_f2.png" />
+    <Content Include="Resources\PreviewPage.html" />
+    <Content Include="Resources\css\animation.css" />
+    <Content Include="Resources\css\itsplearning.css" />
+    <None Include="Resources\image_32x32.png" />
+    <None Include="Resources\css\jquery-ui.css" />
+    <None Include="Resources\HighlightBox.png" />
+    <None Include="Resources\imscp_rootv1p1p2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\imsmd_rootv1p2p1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\ims_xml.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\js\jquery.js" />
+    <None Include="Resources\js\jquery-ui.js" />
+    <None Include="Resources\js\crosshair-min.js" />
+    <Content Include="Resources\navimages\Back_F1.png" />
+    <Content Include="Resources\navimages\Back_F2.png" />
+    <Content Include="Resources\navimages\black.gif" />
+    <Content Include="Resources\navimages\blank.gif" />
+    <Content Include="Resources\navimages\Blank.png" />
+    <Content Include="Resources\navimages\blue.gif" />
+    <None Include="Resources\navimages\empty.png" />
+    <Content Include="Resources\navimages\Next_F1.png" />
+    <Content Include="Resources\navimages\Next_F2.png" />
+    <None Include="Resources\paste_32x32.png" />
+    <None Include="Resources\paste_16x16.png" />
+    <None Include="Resources\tick.png" />
+    <Content Include="Resources\ViewPage.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

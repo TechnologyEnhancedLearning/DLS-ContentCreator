@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <title>Digital Learning Solutions - Diagnostic Assessment Outcome</title>
+       <link rel="stylesheet" href="css/jquery_ui.css"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <script src="js/jquery.js"></script>
+  <script src="js/jquery_ui.js"></script>
+    <script src="js/crosshair-min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <style>
+        #SuccessCircle{
+    background-image: url(navimages/outcome-tick.png);
+    position: absolute;
+     display: none;
+    bottom: 10px;
+    right: 10px;
+    height: 100px;
+    width: 100px;
+}
+#FailCircle{
+    background-image: url(navimages/outcome-cross.png);
+    position: absolute;
+    display:  none;
+    bottom: 10px;
+    right: 10px;
+    height: 100px;
+    width: 100px;
+}
+    </style>
+</head>
+<body style="background-color:#CDCDCD;">
+    <div id="container">
+    <div id="content">
+        <!--<div class="bkg-image" style="background-image: url('navimages/empty.png');width:XXImageWidthXXpx; height:XXImageHeightXXpx;">-->
+        <div id='quiz-content' class='col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3' style='position: absolute; margin-top: 10%;'>
+            <div class='well' style='max-height: 580px;overflow: auto;-moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);-webkit-box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);'>
+                <h3>Diagnostic Assessment Outcome</h3><br/>
+        		<ul class='list-group' id='obj-list-box'>
+                    <!--qchoices-->
+                </ul>
+               <div class='text-center'><i>
+                Click <b>Continue</b> to return to the learning menu where any recommended learning modules will be highlighted.</i></div>
+                <br />
+                <button class='btn btn-primary col-xs-12' id='btn-continue'>Continue</button>
+            </div>
+    </div>
+        <div id="FailCircle"></div>
+        <div id="SuccessCircle"></div>
+            </div>
+        <!--</div>-->
+        </div>
+        <script>
+            if (typeof parent.CCPlayer != 'undefined') {
+                $.each(parent.CCPlayer.objson, function (i, item) {
+                    var objstring = '<li class="list-group-item"><span>' + item.tutorialname + '</span><span class="pull-right">' + item.myscore + '/' + item.possible + '</span></li>';
+                    $('#obj-list-box').append(objstring);
+                });
+                parent.CCPlayer.SubmitDiagnosticOutcome();
+            }
+            $('#btn-continue').click(function () { parent.CCPlayer.CloseLearning(); })
+            $(function () {
+                qs = '';
+                if (typeof parent.CCPlayer != 'undefined') {
+                    if (typeof parent.CCPlayer.UpdateAssessmentScore == 'function') {
+                        if (parent.CCPlayer.OutcomeAnimation == 1) {
+                            //$('#FailCircle').remove();
+                            $('#SuccessCircle').fadeOutAndRemove(1500);
+                            parent.CCPlayer.OutcomeAnimation = 0;
+                        }
+                        else if (parent.CCPlayer.OutcomeAnimation == 2) {
+                            // $('#SuccessCircle').remove();
+                            $('#FailCircle').fadeOutAndRemove(1500);
+                            parent.CCPlayer.OutcomeAnimation = 0;
+                        }
+                    }
+                };
+                if (typeof getUrlParameter('outcome') != 'undefined') {
+                    if (getUrlParameter('outcome') == 1) {
+                        //$('#FailCircle').remove();
+                        $('#SuccessCircle').fadeOutAndRemove(1500);
+                    }
+                    else if (getUrlParameter('outcome') == 2) {
+                        // $('#SuccessCircle').remove();
+                        $('#FailCircle').fadeOutAndRemove(1500);
+                    }
+                };
+                
+            });
+            jQuery.fn.fadeOutAndRemove = function (speed) {
+                $(this).css('display', 'inline')
+                $(this).fadeOut(speed, function () {
+                    $(this).remove();
+                })
+            }
+            var getUrlParameter = function getUrlParameter(sParam) {
+                var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+                    sURLVariables = sPageURL.split('&'),
+                    sParameterName,
+                    i;
+
+                for (i = 0; i < sURLVariables.length; i++) {
+                    sParameterName = sURLVariables[i].split('=');
+
+                    if (sParameterName[0] === sParam) {
+                        return sParameterName[1] === undefined ? true : sParameterName[1];
+                    }
+                }
+            };
+        </script>
+</body>
+</html>

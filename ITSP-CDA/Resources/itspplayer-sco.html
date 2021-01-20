@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Digital Learning Solutions Content Player</title>
+    <style type="text/css">
+		* { margin: 0px; }
+                html, body, iframe { height:100%; }
+		html, body { overflow-y:hidden; font-family:Helvetica, "Helvetica Neue", Arial; font-size:12px; }
+		iframe { display:block; width:100%; }
+
+		html, body, iframe , a, img, table, tbody, tr, td, table td, table th {
+		 border : 0px none;
+                 padding: 0px; 
+		}
+	</style>
+    <script src="XXjquery_jsXX"></script>
+    <script src="XXSCOFunctionsXX"></script>
+    <script src="XXAPIWrapperXX"></script>
+    <script src="XXitsp-trackingXX"></script>
+    <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+    <script>
+        manifest = ['XXImageListXX'];
+
+        var queue = new createjs.LoadQueue(true);
+        queue.setMaxConnections(5);
+        queue.loadManifest(manifest);
+    </script>
+</head>
+<body onLoad="loadPage()" onunload="return unloadPage()">
+    
+       <table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="100%" height="100%" valign="top"><iframe id="contentIframe" frameborder="0" src="XXPageNameXX" style="width:100%;height:100%;-webkit-overflow-scrolling:touch;"></iframe>
+              </td>
+        </tr>
+       </table>
+
+</body>
+</html>

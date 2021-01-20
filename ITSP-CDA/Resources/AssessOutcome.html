@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Digital Learning Solutions - Assessment Outcome</title>
+    <link rel="stylesheet" href="css/jquery_ui.css" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery_ui.js"></script>
+    <script src="js/crosshair-min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <style>
+        .hidden{
+display:none;
+        }
+    </style>
+</head>
+<body style="background-color: #CDCDCD;">
+    <div id="container">
+        <div id="content">
+            <!--<div class="bkg-image" style="background-image: url('navimages/empty.png'); width: XXImageWidthXXpx; height: XXImageHeightXXpx;">-->
+                <div id='quiz-content' class='col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3' style='position: absolute; margin-top: 10%;'>
+                    <div class='well' style='max-height: 580px; overflow: auto; -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);'>
+                        <h3>Post Learning Assessment Complete</h3>
+                        <br />
+                        <div class="row">
+                            <div class="col-sm-4">Score:</div>
+                            <div class="col-sm-8"><h4><span id="lblScore"></span></h4></div>
+                            <div class="col-sm-4">Result:</div>
+                            <div class="col-sm-8"><h4><span id="lblResult" class="label"></span></h4></div>
+                        </div>
+                        <div id="AreasToImprove">
+                            <h4>Areas for improvement:</h4>
+                            <ul class='list-group' id='obj-list-box'>
+                                <!--qchoices-->
+                            </ul>
+                        </div>
+                        <div class='text-center'>
+                            <i>Click <b>Continue</b> to return to the learning menu.</i>
+                        </div>
+                        <br />
+                        <button class='btn btn-primary col-xs-12' id='btn-continue'>Continue</button>
+                    </div>
+                </div>
+            </div>
+        <!--</div>-->
+    </div>
+    <script>
+        var s1 = 0;
+        var p1 = 0;
+        var sco = false;
+        var thresh = 85;
+        if (typeof parent.CCPlayer != 'undefined') {
+            thresh = parseInt(parent.CCPlayer.PLAThresh);
+        }; 
+        if (typeof parent.CCPlayer.objson != 'undefined') {
+            $.each(parent.CCPlayer.objson, function (i, item) {
+                if (item.wrongcount > 0) {
+                    var objstring = '<li class="list-group-item"><span>' + item.tutorialname + '</span></li>';
+                    $('#obj-list-box').append(objstring);
+                }
+                s1 = s1 + item.myscore;
+                p1 = p1 + item.myscore + item.wrongcount;
+            });
+        }
+       if (s1 === 0 && p1 === 0)
+        {
+            sco = true;
+            s1 = parent.CCPlayer.myscore;
+            p1 = parent.CCPlayer.myscore + parent.CCPlayer.wrongcount;
+        };
+        var pc = s1 / p1 * 100;
+        pc = parseInt(pc, 10);
+        $('#lblScore').html(pc.toString() + '%');
+        if (sco == true)
+        {
+            $('#AreasToImprove').addClass('hidden');
+        }
+        if (pc >= 100)
+        {
+            $('#AreasToImprove').addClass('hidden');
+        }
+        if (pc >= thresh)
+        {
+            $('#lblResult').html('PASS');
+            $('#lblResult').addClass('label-success');
+        }
+        else
+        {
+            $('#lblResult').html('FAIL');
+            $('#lblResult').addClass('label-danger');
+        }
+        parent.CCPlayer.SubmitPLAssessOutcome(pc);
+        $('#btn-continue').click(function () {
+            parent.CCPlayer.CloseLearning();
+        })
+
+    </script>
+</body>
+</html>
