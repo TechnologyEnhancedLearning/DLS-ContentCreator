@@ -5165,6 +5165,7 @@ Partial Public Class CDAMain
                     sPageJS = sPageJS + "});"
                 End If
             End If
+            sPageJS = sPageJS + "function InitialiseUI(){"
             'htmlSource = htmlSource.Replace("XXBlankImageSrcXX", sPath & "\navimages\blank.png")
             If bIsPreview Then
                 htmlSource = htmlSource.Replace("XXitsplearningcssXX", sPath & "\css\itsplearning.css")
@@ -5451,7 +5452,7 @@ Partial Public Class CDAMain
                     sPrefetch = sPrefetch & "<link rel='prefetch' href='js/" & utility.TidyFileName(sPage) & ".js' />"
                 End If
             End If
-            sPageJS = sPageJS + "};}"
+            sPageJS = sPageJS + "};}}$(document).ready(function(){InitialiseUI();});"
             htmlSource = htmlSource.Replace(".stylestring{}", htmlStyles)
             htmlSource = htmlSource.Replace("<link rel='prefetch' href='#' />", sPrefetch)
             htmlSource = htmlSource.Replace("<div id='output-objects'></div>", htmlObjects)
