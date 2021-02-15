@@ -276,8 +276,13 @@
         'setup a judge drag interaction function:
         CDAMain.JudgeFunctionList.Add("judgeDrag" & Replace(Replace(CDAMain.TidyObjectName(obj.ObjectName), "-", ""), " ", ""))
         returnJS = returnJS + "function judgeDrag" & Replace(Replace(CDAMain.TidyObjectName(obj.ObjectName), "-", ""), " ", "") & " () {return " + flagDropCorrect + ";}"
+        'check if limit to object has been set and set up dragcontainer variable:
+        Dim sConstrainVar As String = "limitTo" & utility.RandomString()
+        If bhDrag.LimitToObject <> "" Then
+            returnJS = returnJS + "var " & sConstrainVar & " = $('#" & bhDrag.LimitToObject & "');"
+        End If
         'Make the object draggable:
-        returnJS = returnJS + "$('#" & CDAMain.TidyObjectName(obj.ObjectName) & "').draggable({drag:function(o,i){var t=i.position.left-i.originalPosition.left,n=i.position.top-i.originalPosition.top;i.position.left=i.originalPosition.left/scale+t/scale,i.position.top=i.originalPosition.top/scale+n/scale},cursor: '" & bhDrag.DragCursor & "'"
+        returnJS = returnJS + "$('#" & CDAMain.TidyObjectName(obj.ObjectName) & "').draggable({start:startFix,create:createFix,drag:dragFix,cursor: '" & bhDrag.DragCursor & "'"
         'check if a direction has been specified and add option if so
         If bhDrag.Direction = "Horizontal" Then
             returnJS = returnJS + ",axis:'x'"
@@ -286,7 +291,7 @@
         End If
         'check if limit to object has been set and contain if so:
         If bhDrag.LimitToObject <> "" Then
-            returnJS = returnJS + ",containment:'#" & bhDrag.LimitToObject & "'"
+            returnJS = returnJS + ",containment: [" & sConstrainVar & ".offset().left, " & sConstrainVar & ".offset().top, ( ( " & sConstrainVar & ".offset().left + ( " & sConstrainVar & ".width() * scale ) ) - ( $('#" & CDAMain.TidyObjectName(obj.ObjectName) & "').width()*scale ) ) , ( ( " & sConstrainVar & ".offset().top + ( " & sConstrainVar & ".height() * scale ) ) - ($('#" & CDAMain.TidyObjectName(obj.ObjectName) & "').height() *scale ) ) ]"
         End If
         'check if we should return to start position (and do so) if not dropped correctly:
         If bhDrag.ResetOnMouseUp Then
@@ -297,7 +302,7 @@
         End If
         'handle snap to grid settings:
         If bhDrag.SnapGridWidth > 0 Or bhDrag.SnapGridHeight > 0 Then
-            returnJS = returnJS + ",grid: [ " & bhDrag.SnapGridWidth & ", " & bhDrag.SnapGridHeight & " ]"
+            returnJS = returnJS + ",grid: [ " & bhDrag.SnapGridWidth & "*scale, " & bhDrag.SnapGridHeight & "*scale ]"
         End If
         'Close the draggable method
         returnJS = returnJS + "});"
@@ -398,7 +403,7 @@
         Dim flagResizeActive As String = Replace("ResizeFlag" & CDAMain.TidyObjectName(obj.ObjectName), "-", "") & utility.RandomString()
         returnJS = returnJS + "var " & flagResizeActive & " = false;"
         'Make the object draggable:
-        returnJS = returnJS + "$('#" & CDAMain.TidyObjectName(obj.ObjectName) & "').resizable({minWidth:10*-$content.width(),minHeight:10*-$content.height(),resize:function(i,e){var t=e.size.width-e.originalSize.width,h=e.originalSize.width+t/scale,n=e.size.height-e.originalSize.height,g=e.originalSize.height+n/scale;e.size.width=h,e.size.height=g},"
+        returnJS = returnJS + "$('#" & CDAMain.TidyObjectName(obj.ObjectName) & "').resizable({minWidth:10*-$('#content').width(),minHeight:10*-$('#content').height(),resize:resizeFix,"
 
         'set options according to the resize type:
 
@@ -414,15 +419,15 @@
         End Select
         'handle snap to grid settings:
         If bhResize.SnapGridWidth > 0 Or bhResize.SnapGridHeight > 0 Then
-            returnJS = returnJS + ",grid: [ " & bhResize.SnapGridWidth & ", " & bhResize.SnapGridHeight & " ]"
+            returnJS = returnJS + ",grid: [ " & bhResize.SnapGridWidth & "*scale, " & bhResize.SnapGridHeight & "*scale ]"
         End If
         'handle max width setting:
         If bhResize.MaxWidth > 0 Then
-            returnJS = returnJS + ",maxWidth: " & bhResize.MaxWidth
+            returnJS = returnJS + ",maxWidth: " & bhResize.MaxWidth & "*scale"
         End If
         'handle max height setting:
         If bhResize.MaxHeight > 0 Then
-            returnJS = returnJS + ",maxHeight: " & bhResize.MaxHeight
+            returnJS = returnJS + ",maxHeight: " & bhResize.MaxHeight & "*scale"
         End If
         returnJS = returnJS + "});"
         'handle final size judgement:
