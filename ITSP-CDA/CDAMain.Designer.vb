@@ -331,9 +331,9 @@
         Me.pnlBehaviours = New DevExpress.XtraBars.Docking.DockPanel()
         Me.ControlContainer2 = New DevExpress.XtraBars.Docking.ControlContainer()
         Me.scrollableBehaviours = New DevExpress.XtraEditors.XtraScrollableControl()
-        Me.btnDeleteBehaviour = New DevExpress.XtraEditors.SimpleButton()
         Me.ddAddBehavour = New DevExpress.XtraEditors.DropDownButton()
         Me.AddBehaviourDD = New DevExpress.XtraBars.PopupMenu(Me.components)
+        Me.btnDeleteBehaviour = New DevExpress.XtraEditors.SimpleButton()
         Me.listBehaviours = New DevExpress.XtraEditors.ListBoxControl()
         Me.pnlBehaviourProps = New DevExpress.XtraBars.Docking.DockPanel()
         Me.ControlContainer3 = New DevExpress.XtraBars.Docking.ControlContainer()
@@ -2246,17 +2246,17 @@
         'btnSizeObjectToImage
         '
         Me.btnSizeObjectToImage.ImageOptions.Image = CType(resources.GetObject("btnSizeObjectToImage.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnSizeObjectToImage.Location = New System.Drawing.Point(12, 70)
+        Me.btnSizeObjectToImage.Location = New System.Drawing.Point(12, 132)
         Me.btnSizeObjectToImage.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSizeObjectToImage.Name = "btnSizeObjectToImage"
-        Me.btnSizeObjectToImage.Size = New System.Drawing.Size(507, 32)
+        Me.btnSizeObjectToImage.Size = New System.Drawing.Size(533, 32)
         Me.btnSizeObjectToImage.StyleController = Me.LayoutControl1
         Me.btnSizeObjectToImage.TabIndex = 9
         Me.btnSizeObjectToImage.Text = "Resize object to image size"
         '
         'MouseUpImageGalleryEdit
         '
-        Me.MouseUpImageGalleryEdit.Location = New System.Drawing.Point(158, 40)
+        Me.MouseUpImageGalleryEdit.Location = New System.Drawing.Point(167, 102)
         Me.MouseUpImageGalleryEdit.Margin = New System.Windows.Forms.Padding(4)
         Me.MouseUpImageGalleryEdit.MenuManager = Me.rbnMain
         Me.MouseUpImageGalleryEdit.Name = "MouseUpImageGalleryEdit"
@@ -2269,13 +2269,13 @@
         GalleryItemGroup2.Caption = "Project Images"
         Me.MouseUpImageGalleryEdit.Properties.Gallery.Groups.AddRange(New DevExpress.XtraBars.Ribbon.GalleryItemGroup() {GalleryItemGroup2})
         Me.MouseUpImageGalleryEdit.Properties.ShowButtons = False
-        Me.MouseUpImageGalleryEdit.Size = New System.Drawing.Size(361, 26)
+        Me.MouseUpImageGalleryEdit.Size = New System.Drawing.Size(378, 26)
         Me.MouseUpImageGalleryEdit.StyleController = Me.LayoutControl1
         Me.MouseUpImageGalleryEdit.TabIndex = 8
         '
         'MouseDownImageGalleryEdit
         '
-        Me.MouseDownImageGalleryEdit.Location = New System.Drawing.Point(158, 10)
+        Me.MouseDownImageGalleryEdit.Location = New System.Drawing.Point(167, 72)
         Me.MouseDownImageGalleryEdit.Margin = New System.Windows.Forms.Padding(4)
         Me.MouseDownImageGalleryEdit.MenuManager = Me.rbnMain
         Me.MouseDownImageGalleryEdit.Name = "MouseDownImageGalleryEdit"
@@ -2288,13 +2288,13 @@
         GalleryItemGroup3.Caption = "Project Images"
         Me.MouseDownImageGalleryEdit.Properties.Gallery.Groups.AddRange(New DevExpress.XtraBars.Ribbon.GalleryItemGroup() {GalleryItemGroup3})
         Me.MouseDownImageGalleryEdit.Properties.ShowButtons = False
-        Me.MouseDownImageGalleryEdit.Size = New System.Drawing.Size(361, 26)
+        Me.MouseDownImageGalleryEdit.Size = New System.Drawing.Size(378, 26)
         Me.MouseDownImageGalleryEdit.StyleController = Me.LayoutControl1
         Me.MouseDownImageGalleryEdit.TabIndex = 7
         '
         'HoverImageGalleryEdit
         '
-        Me.HoverImageGalleryEdit.Location = New System.Drawing.Point(158, -20)
+        Me.HoverImageGalleryEdit.Location = New System.Drawing.Point(167, 42)
         Me.HoverImageGalleryEdit.Margin = New System.Windows.Forms.Padding(4)
         Me.HoverImageGalleryEdit.MenuManager = Me.rbnMain
         Me.HoverImageGalleryEdit.Name = "HoverImageGalleryEdit"
@@ -2308,13 +2308,13 @@
         Me.HoverImageGalleryEdit.Properties.Gallery.Groups.AddRange(New DevExpress.XtraBars.Ribbon.GalleryItemGroup() {GalleryItemGroup4})
         Me.HoverImageGalleryEdit.Properties.Gallery.ItemCheckMode = DevExpress.XtraBars.Ribbon.Gallery.ItemCheckMode.SingleRadio
         Me.HoverImageGalleryEdit.Properties.ShowButtons = False
-        Me.HoverImageGalleryEdit.Size = New System.Drawing.Size(361, 26)
+        Me.HoverImageGalleryEdit.Size = New System.Drawing.Size(378, 26)
         Me.HoverImageGalleryEdit.StyleController = Me.LayoutControl1
         Me.HoverImageGalleryEdit.TabIndex = 6
         '
         'StandardImageGalleryEdit
         '
-        Me.StandardImageGalleryEdit.Location = New System.Drawing.Point(158, -50)
+        Me.StandardImageGalleryEdit.Location = New System.Drawing.Point(167, 12)
         Me.StandardImageGalleryEdit.Margin = New System.Windows.Forms.Padding(4)
         Me.StandardImageGalleryEdit.MenuManager = Me.rbnMain
         Me.StandardImageGalleryEdit.Name = "StandardImageGalleryEdit"
@@ -2328,7 +2328,7 @@
         Me.StandardImageGalleryEdit.Properties.Gallery.Groups.AddRange(New DevExpress.XtraBars.Ribbon.GalleryItemGroup() {GalleryItemGroup5})
         Me.StandardImageGalleryEdit.Properties.Gallery.ItemCheckMode = DevExpress.XtraBars.Ribbon.Gallery.ItemCheckMode.SingleRadio
         Me.StandardImageGalleryEdit.Properties.ShowButtons = False
-        Me.StandardImageGalleryEdit.Size = New System.Drawing.Size(361, 26)
+        Me.StandardImageGalleryEdit.Size = New System.Drawing.Size(378, 26)
         Me.StandardImageGalleryEdit.StyleController = Me.LayoutControl1
         Me.StandardImageGalleryEdit.TabIndex = 5
         '
@@ -2338,7 +2338,7 @@
         Me.lcgObjectpropertiesImages.GroupBordersVisible = False
         Me.lcgObjectpropertiesImages.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem2, Me.LayoutControlItem1, Me.LayoutControlItem3, Me.LayoutControlItem4, Me.LayoutControlItem12})
         Me.lcgObjectpropertiesImages.Name = "lcgObjectpropertiesImages"
-        Me.lcgObjectpropertiesImages.Size = New System.Drawing.Size(531, 176)
+        Me.lcgObjectpropertiesImages.Size = New System.Drawing.Size(557, 176)
         Me.lcgObjectpropertiesImages.TextVisible = False
         '
         'LayoutControlItem2
@@ -2346,7 +2346,7 @@
         Me.LayoutControlItem2.Control = Me.StandardImageGalleryEdit
         Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem2.Name = "LayoutControlItem2"
-        Me.LayoutControlItem2.Size = New System.Drawing.Size(511, 30)
+        Me.LayoutControlItem2.Size = New System.Drawing.Size(537, 30)
         Me.LayoutControlItem2.Text = "Standard image:"
         Me.LayoutControlItem2.TextSize = New System.Drawing.Size(143, 19)
         '
@@ -2355,7 +2355,7 @@
         Me.LayoutControlItem1.Control = Me.HoverImageGalleryEdit
         Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 30)
         Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(511, 30)
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(537, 30)
         Me.LayoutControlItem1.Text = "Hover image:"
         Me.LayoutControlItem1.TextSize = New System.Drawing.Size(143, 19)
         '
@@ -2364,7 +2364,7 @@
         Me.LayoutControlItem3.Control = Me.MouseDownImageGalleryEdit
         Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 60)
         Me.LayoutControlItem3.Name = "LayoutControlItem3"
-        Me.LayoutControlItem3.Size = New System.Drawing.Size(511, 30)
+        Me.LayoutControlItem3.Size = New System.Drawing.Size(537, 30)
         Me.LayoutControlItem3.Text = "Mouse down image:"
         Me.LayoutControlItem3.TextSize = New System.Drawing.Size(143, 19)
         '
@@ -2373,7 +2373,7 @@
         Me.LayoutControlItem4.Control = Me.MouseUpImageGalleryEdit
         Me.LayoutControlItem4.Location = New System.Drawing.Point(0, 90)
         Me.LayoutControlItem4.Name = "LayoutControlItem4"
-        Me.LayoutControlItem4.Size = New System.Drawing.Size(511, 30)
+        Me.LayoutControlItem4.Size = New System.Drawing.Size(537, 30)
         Me.LayoutControlItem4.Text = "Mouse up image:"
         Me.LayoutControlItem4.TextSize = New System.Drawing.Size(143, 19)
         '
@@ -2382,7 +2382,7 @@
         Me.LayoutControlItem12.Control = Me.btnSizeObjectToImage
         Me.LayoutControlItem12.Location = New System.Drawing.Point(0, 120)
         Me.LayoutControlItem12.Name = "LayoutControlItem12"
-        Me.LayoutControlItem12.Size = New System.Drawing.Size(511, 36)
+        Me.LayoutControlItem12.Size = New System.Drawing.Size(537, 36)
         Me.LayoutControlItem12.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem12.TextVisible = False
         '
@@ -2414,7 +2414,7 @@
         'spinRadius
         '
         Me.spinRadius.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.spinRadius.Location = New System.Drawing.Point(123, 74)
+        Me.spinRadius.Location = New System.Drawing.Point(132, 136)
         Me.spinRadius.Margin = New System.Windows.Forms.Padding(4)
         Me.spinRadius.MenuManager = Me.rbnMain
         Me.spinRadius.Name = "spinRadius"
@@ -2422,41 +2422,41 @@
         Me.spinRadius.Properties.IsFloatValue = False
         Me.spinRadius.Properties.Mask.EditMask = "N00"
         Me.spinRadius.Properties.MaxValue = New Decimal(New Integer() {1000, 0, 0, 0})
-        Me.spinRadius.Size = New System.Drawing.Size(396, 28)
+        Me.spinRadius.Size = New System.Drawing.Size(413, 28)
         Me.spinRadius.StyleController = Me.LayoutControl2
         Me.spinRadius.TabIndex = 8
         '
         'spinBorderOpacity
         '
         Me.spinBorderOpacity.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.spinBorderOpacity.Location = New System.Drawing.Point(123, 42)
+        Me.spinBorderOpacity.Location = New System.Drawing.Point(132, 104)
         Me.spinBorderOpacity.Margin = New System.Windows.Forms.Padding(4)
         Me.spinBorderOpacity.MenuManager = Me.rbnMain
         Me.spinBorderOpacity.Name = "spinBorderOpacity"
         Me.spinBorderOpacity.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.spinBorderOpacity.Properties.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
         Me.spinBorderOpacity.Properties.MaxValue = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.spinBorderOpacity.Size = New System.Drawing.Size(396, 28)
+        Me.spinBorderOpacity.Size = New System.Drawing.Size(413, 28)
         Me.spinBorderOpacity.StyleController = Me.LayoutControl2
         Me.spinBorderOpacity.TabIndex = 7
         '
         'BorderColourPicker
         '
         Me.BorderColourPicker.EditValue = System.Drawing.Color.Empty
-        Me.BorderColourPicker.Location = New System.Drawing.Point(123, 12)
+        Me.BorderColourPicker.Location = New System.Drawing.Point(132, 74)
         Me.BorderColourPicker.Margin = New System.Windows.Forms.Padding(4)
         Me.BorderColourPicker.MenuManager = Me.rbnMain
         Me.BorderColourPicker.Name = "BorderColourPicker"
         Me.BorderColourPicker.Properties.AutomaticColor = System.Drawing.Color.Black
         Me.BorderColourPicker.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.BorderColourPicker.Size = New System.Drawing.Size(396, 26)
+        Me.BorderColourPicker.Size = New System.Drawing.Size(413, 26)
         Me.BorderColourPicker.StyleController = Me.LayoutControl2
         Me.BorderColourPicker.TabIndex = 6
         '
         'spinBorderWidth
         '
         Me.spinBorderWidth.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.spinBorderWidth.Location = New System.Drawing.Point(123, -20)
+        Me.spinBorderWidth.Location = New System.Drawing.Point(132, 42)
         Me.spinBorderWidth.Margin = New System.Windows.Forms.Padding(4)
         Me.spinBorderWidth.MenuManager = Me.rbnMain
         Me.spinBorderWidth.Name = "spinBorderWidth"
@@ -2464,20 +2464,20 @@
         Me.spinBorderWidth.Properties.IsFloatValue = False
         Me.spinBorderWidth.Properties.Mask.EditMask = "N00"
         Me.spinBorderWidth.Properties.MaxValue = New Decimal(New Integer() {20, 0, 0, 0})
-        Me.spinBorderWidth.Size = New System.Drawing.Size(396, 28)
+        Me.spinBorderWidth.Size = New System.Drawing.Size(413, 28)
         Me.spinBorderWidth.StyleController = Me.LayoutControl2
         Me.spinBorderWidth.TabIndex = 5
         '
         'cbxBorderStyle
         '
-        Me.cbxBorderStyle.Location = New System.Drawing.Point(123, -50)
+        Me.cbxBorderStyle.Location = New System.Drawing.Point(132, 12)
         Me.cbxBorderStyle.Margin = New System.Windows.Forms.Padding(4)
         Me.cbxBorderStyle.MenuManager = Me.rbnMain
         Me.cbxBorderStyle.Name = "cbxBorderStyle"
         Me.cbxBorderStyle.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cbxBorderStyle.Properties.Items.AddRange(New Object() {"none", "solid", "dotted", "dashed", "groove", "ridge", "inset", "outset"})
         Me.cbxBorderStyle.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
-        Me.cbxBorderStyle.Size = New System.Drawing.Size(396, 26)
+        Me.cbxBorderStyle.Size = New System.Drawing.Size(413, 26)
         Me.cbxBorderStyle.StyleController = Me.LayoutControl2
         Me.cbxBorderStyle.TabIndex = 4
         '
@@ -2487,7 +2487,7 @@
         Me.lcgObjectPropertiesBorder.GroupBordersVisible = False
         Me.lcgObjectPropertiesBorder.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem5, Me.LayoutControlItem6, Me.LayoutControlItem7, Me.LayoutControlItem8, Me.LayoutControlItem11})
         Me.lcgObjectPropertiesBorder.Name = "lcgObjectPropertiesBorder"
-        Me.lcgObjectPropertiesBorder.Size = New System.Drawing.Size(531, 176)
+        Me.lcgObjectPropertiesBorder.Size = New System.Drawing.Size(557, 176)
         Me.lcgObjectPropertiesBorder.TextVisible = False
         '
         'LayoutControlItem5
@@ -2495,7 +2495,7 @@
         Me.LayoutControlItem5.Control = Me.cbxBorderStyle
         Me.LayoutControlItem5.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem5.Name = "LayoutControlItem5"
-        Me.LayoutControlItem5.Size = New System.Drawing.Size(511, 30)
+        Me.LayoutControlItem5.Size = New System.Drawing.Size(537, 30)
         Me.LayoutControlItem5.Text = "Border style:"
         Me.LayoutControlItem5.TextSize = New System.Drawing.Size(108, 19)
         '
@@ -2504,7 +2504,7 @@
         Me.LayoutControlItem6.Control = Me.spinBorderWidth
         Me.LayoutControlItem6.Location = New System.Drawing.Point(0, 30)
         Me.LayoutControlItem6.Name = "LayoutControlItem6"
-        Me.LayoutControlItem6.Size = New System.Drawing.Size(511, 32)
+        Me.LayoutControlItem6.Size = New System.Drawing.Size(537, 32)
         Me.LayoutControlItem6.Text = "Border width:"
         Me.LayoutControlItem6.TextSize = New System.Drawing.Size(108, 19)
         '
@@ -2513,7 +2513,7 @@
         Me.LayoutControlItem7.Control = Me.BorderColourPicker
         Me.LayoutControlItem7.Location = New System.Drawing.Point(0, 62)
         Me.LayoutControlItem7.Name = "LayoutControlItem7"
-        Me.LayoutControlItem7.Size = New System.Drawing.Size(511, 30)
+        Me.LayoutControlItem7.Size = New System.Drawing.Size(537, 30)
         Me.LayoutControlItem7.Text = "Border colour:"
         Me.LayoutControlItem7.TextSize = New System.Drawing.Size(108, 19)
         '
@@ -2522,7 +2522,7 @@
         Me.LayoutControlItem8.Control = Me.spinBorderOpacity
         Me.LayoutControlItem8.Location = New System.Drawing.Point(0, 92)
         Me.LayoutControlItem8.Name = "LayoutControlItem8"
-        Me.LayoutControlItem8.Size = New System.Drawing.Size(511, 32)
+        Me.LayoutControlItem8.Size = New System.Drawing.Size(537, 32)
         Me.LayoutControlItem8.Text = "Border opacity:"
         Me.LayoutControlItem8.TextSize = New System.Drawing.Size(108, 19)
         '
@@ -2531,7 +2531,7 @@
         Me.LayoutControlItem11.Control = Me.spinRadius
         Me.LayoutControlItem11.Location = New System.Drawing.Point(0, 124)
         Me.LayoutControlItem11.Name = "LayoutControlItem11"
-        Me.LayoutControlItem11.Size = New System.Drawing.Size(511, 32)
+        Me.LayoutControlItem11.Size = New System.Drawing.Size(537, 32)
         Me.LayoutControlItem11.Text = "Roundness:"
         Me.LayoutControlItem11.TextSize = New System.Drawing.Size(108, 19)
         '
@@ -2560,27 +2560,27 @@
         'spinBackgroundOpacity
         '
         Me.spinBackgroundOpacity.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.spinBackgroundOpacity.Location = New System.Drawing.Point(159, 42)
+        Me.spinBackgroundOpacity.Location = New System.Drawing.Point(168, 42)
         Me.spinBackgroundOpacity.Margin = New System.Windows.Forms.Padding(4)
         Me.spinBackgroundOpacity.MenuManager = Me.rbnMain
         Me.spinBackgroundOpacity.Name = "spinBackgroundOpacity"
         Me.spinBackgroundOpacity.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.spinBackgroundOpacity.Properties.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
         Me.spinBackgroundOpacity.Properties.MaxValue = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.spinBackgroundOpacity.Size = New System.Drawing.Size(386, 28)
+        Me.spinBackgroundOpacity.Size = New System.Drawing.Size(377, 28)
         Me.spinBackgroundOpacity.StyleController = Me.LayoutControl3
         Me.spinBackgroundOpacity.TabIndex = 5
         '
         'ObjBackgroundColourPicker
         '
         Me.ObjBackgroundColourPicker.EditValue = System.Drawing.Color.Empty
-        Me.ObjBackgroundColourPicker.Location = New System.Drawing.Point(159, 12)
+        Me.ObjBackgroundColourPicker.Location = New System.Drawing.Point(168, 12)
         Me.ObjBackgroundColourPicker.Margin = New System.Windows.Forms.Padding(4)
         Me.ObjBackgroundColourPicker.MenuManager = Me.rbnMain
         Me.ObjBackgroundColourPicker.Name = "ObjBackgroundColourPicker"
         Me.ObjBackgroundColourPicker.Properties.AutomaticColor = System.Drawing.Color.Black
         Me.ObjBackgroundColourPicker.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.ObjBackgroundColourPicker.Size = New System.Drawing.Size(386, 26)
+        Me.ObjBackgroundColourPicker.Size = New System.Drawing.Size(377, 26)
         Me.ObjBackgroundColourPicker.StyleController = Me.LayoutControl3
         Me.ObjBackgroundColourPicker.TabIndex = 4
         '
@@ -2659,12 +2659,12 @@
         '
         'cbxVideoGotoOnFinish
         '
-        Me.cbxVideoGotoOnFinish.Location = New System.Drawing.Point(165, 12)
+        Me.cbxVideoGotoOnFinish.Location = New System.Drawing.Point(174, 12)
         Me.cbxVideoGotoOnFinish.Margin = New System.Windows.Forms.Padding(4)
         Me.cbxVideoGotoOnFinish.MenuManager = Me.rbnMain
         Me.cbxVideoGotoOnFinish.Name = "cbxVideoGotoOnFinish"
         Me.cbxVideoGotoOnFinish.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.cbxVideoGotoOnFinish.Size = New System.Drawing.Size(380, 26)
+        Me.cbxVideoGotoOnFinish.Size = New System.Drawing.Size(371, 26)
         Me.cbxVideoGotoOnFinish.StyleController = Me.LayoutControl4
         Me.cbxVideoGotoOnFinish.TabIndex = 4
         '
@@ -2737,25 +2737,16 @@
         Me.scrollableBehaviours.Size = New System.Drawing.Size(559, 162)
         Me.scrollableBehaviours.TabIndex = 7
         '
-        'btnDeleteBehaviour
-        '
-        Me.btnDeleteBehaviour.ImageOptions.Image = CType(resources.GetObject("btnDeleteBehaviour.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnDeleteBehaviour.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter
-        Me.btnDeleteBehaviour.Location = New System.Drawing.Point(68, 92)
-        Me.btnDeleteBehaviour.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnDeleteBehaviour.Name = "btnDeleteBehaviour"
-        Me.btnDeleteBehaviour.Size = New System.Drawing.Size(23, 20)
-        Me.btnDeleteBehaviour.TabIndex = 7
-        '
         'ddAddBehavour
         '
+        Me.ddAddBehavour.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ddAddBehavour.DropDownArrowStyle = DevExpress.XtraEditors.DropDownArrowStyle.Show
         Me.ddAddBehavour.DropDownControl = Me.AddBehaviourDD
-        Me.ddAddBehavour.Location = New System.Drawing.Point(3, 92)
+        Me.ddAddBehavour.Location = New System.Drawing.Point(0, 142)
         Me.ddAddBehavour.Margin = New System.Windows.Forms.Padding(4)
         Me.ddAddBehavour.MenuManager = Me.rbnMain
         Me.ddAddBehavour.Name = "ddAddBehavour"
-        Me.ddAddBehavour.Size = New System.Drawing.Size(60, 20)
+        Me.ddAddBehavour.Size = New System.Drawing.Size(536, 20)
         Me.ddAddBehavour.TabIndex = 7
         Me.ddAddBehavour.Text = "Add"
         '
@@ -2779,14 +2770,26 @@
         Me.AddBehaviourDD.Name = "AddBehaviourDD"
         Me.AddBehaviourDD.Ribbon = Me.rbnMain
         '
+        'btnDeleteBehaviour
+        '
+        Me.btnDeleteBehaviour.Dock = System.Windows.Forms.DockStyle.Right
+        Me.btnDeleteBehaviour.ImageOptions.Image = CType(resources.GetObject("btnDeleteBehaviour.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnDeleteBehaviour.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter
+        Me.btnDeleteBehaviour.Location = New System.Drawing.Point(536, 0)
+        Me.btnDeleteBehaviour.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnDeleteBehaviour.Name = "btnDeleteBehaviour"
+        Me.btnDeleteBehaviour.Size = New System.Drawing.Size(23, 162)
+        Me.btnDeleteBehaviour.TabIndex = 7
+        Me.btnDeleteBehaviour.ToolTip = "Delete behaviour"
+        '
         'listBehaviours
         '
         Me.listBehaviours.Cursor = System.Windows.Forms.Cursors.Default
-        Me.listBehaviours.Dock = System.Windows.Forms.DockStyle.Top
+        Me.listBehaviours.Dock = System.Windows.Forms.DockStyle.Fill
         Me.listBehaviours.Location = New System.Drawing.Point(0, 0)
         Me.listBehaviours.Margin = New System.Windows.Forms.Padding(4)
         Me.listBehaviours.Name = "listBehaviours"
-        Me.listBehaviours.Size = New System.Drawing.Size(559, 142)
+        Me.listBehaviours.Size = New System.Drawing.Size(559, 162)
         Me.listBehaviours.TabIndex = 5
         '
         'pnlBehaviourProps
