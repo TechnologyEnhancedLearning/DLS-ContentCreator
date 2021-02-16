@@ -1007,6 +1007,8 @@ Partial Public Class CDAMain
         Try
             If Not itspunit Is Nothing Then
                 If (pgIndex <> selectedPageIndex Or boolForce) Then
+                    ShowHideVideoProperties(False)
+                    ShowHideObjectProperties(False)
                     If pgIndex <> selectedPageIndex Then
                         selectedObjectID = ""
                     End If
@@ -3047,6 +3049,19 @@ Partial Public Class CDAMain
         End If
         Return Nothing
     End Function
+    Public Sub ShowHideObjectProperties(ByVal bShow As Boolean)
+        ObjectPropertiesTabControl.TabPages.Item(1).PageVisible = bShow
+        ObjectPropertiesTabControl.TabPages.Item(2).PageVisible = bShow
+        ObjectPropertiesTabControl.TabPages.Item(3).PageVisible = bShow
+        ObjectProperties1.Enabled = bShow
+        lcgObjectPropertiesBackground.Enabled = bShow
+        lcgObjectPropertiesBorder.Enabled = bShow
+        lcgObjectpropertiesImages.Enabled = bShow
+    End Sub
+    Public Sub ShowHideVideoProperties(ByVal bShow As Boolean)
+        ObjectPropertiesTabControl.TabPages.Item(4).PageVisible = bShow
+        lcgObjectPropertiesVideo.Enabled = bShow
+    End Sub
     Public Sub SelectObject(Optional ByVal setSelected As Boolean = True)
         Try
             Dim sId As String = selectedObjectID
@@ -3059,19 +3074,11 @@ Partial Public Class CDAMain
             Dim obj As mstns.Object_ = GetObjectByName(sId)
             If Not obj Is Nothing Then
                 If obj.VideoFile = "" Then
-                    ObjectPropertiesTabControl.TabPages.Item(4).PageVisible = False
-                    ObjectPropertiesTabControl.TabPages.Item(1).PageVisible = True
-                    ObjectPropertiesTabControl.TabPages.Item(2).PageVisible = True
-                    ObjectPropertiesTabControl.TabPages.Item(3).PageVisible = True
-                    pnlBehaviours.Enabled = True
-                    pnlBehaviourProps.Enabled = True
+                    ShowHideVideoProperties(False)
+                    ShowHideObjectProperties(True)
                 Else
-                    ObjectPropertiesTabControl.TabPages.Item(4).PageVisible = True
-                    ObjectPropertiesTabControl.TabPages.Item(1).PageVisible = False
-                    ObjectPropertiesTabControl.TabPages.Item(2).PageVisible = False
-                    ObjectPropertiesTabControl.TabPages.Item(3).PageVisible = False
-                    pnlBehaviours.Enabled = False
-                    pnlBehaviourProps.Enabled = False
+                    ShowHideVideoProperties(True)
+                    ShowHideObjectProperties(False)
                 End If
                 'StandardImageGalleryEdit.CheckedItems.Clear()
                 'HoverImageGalleryEdit.CheckedItems.Clear()
