@@ -134,10 +134,14 @@ Public Class utility
     End Function
     Public Shared Function RemovePageTags(ByVal source As String) As String
         Try
+            If source Is Nothing Then
+                Return ""
+            End If
             Dim result As String
             ' Remove the html tags (prepare first by clearing attributes)
             result = Text.RegularExpressions.Regex.Replace(source, "<( )*html([^>])*>", "<meta>", System.Text.RegularExpressions.RegexOptions.IgnoreCase)
             result = Text.RegularExpressions.Regex.Replace(result, "(<html>)", String.Empty, System.Text.RegularExpressions.RegexOptions.IgnoreCase)
+            result = Text.RegularExpressions.Regex.Replace(result, "<!DOCTYPE(.*?)>", String.Empty, System.Text.RegularExpressions.RegexOptions.IgnoreCase)
             result = result.Replace("<head>", String.Empty)
             ' Remove the meta tags (prepare first by clearing attributes)
             result = Text.RegularExpressions.Regex.Replace(result, "<( )*meta([^>])*>", "<meta>", System.Text.RegularExpressions.RegexOptions.IgnoreCase)
@@ -149,7 +153,7 @@ Public Class utility
             result = result.Replace("</body>", String.Empty)
             result = result.Replace("</html>", String.Empty)
             Return result
-        Catch
+        Catch ex As Exception
             MessageBox.Show("Error")
             Return source
         End Try
