@@ -103,6 +103,9 @@ Public Class PageSettings
             End If
             If Not CDAMain.wbPagePreview.Document Is Nothing Then
                 CDAMain.wbPagePreview.Document.InvokeScript("updateInstructionText", {utility.FixHTMLProjectFontsize(htmtext), left})
+                If t1.Length < 4 And t2.Length < 4 Then
+                    CDAMain.ReloadControls(False, False, False, False, False, False, True, False)
+                End If
             End If
         End If
     End Sub
