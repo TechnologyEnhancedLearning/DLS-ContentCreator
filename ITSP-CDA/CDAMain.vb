@@ -2309,7 +2309,7 @@ Partial Public Class CDAMain
             End If
             'Handle instruction type and text settings:
             Dim sType As String = "Explanation"
-            Select Case pg.PageType
+            Select Case pg.PageType.ToLower()
                 Case "explain"
                     sType = "Explanation"
                 Case "demo"
@@ -4991,7 +4991,7 @@ Partial Public Class CDAMain
                 htmlSource = htmlSource.Replace("XXTBClassXX", "tb-explain")
             End If
             Dim sType As String = "Explanation"
-            Select Case pg.PageType
+            Select Case pg.PageType.ToLower()
                 Case "explain"
                     sType = "Explanation"
                 Case "demo"
