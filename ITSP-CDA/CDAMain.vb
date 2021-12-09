@@ -3060,6 +3060,7 @@ Partial Public Class CDAMain
     End Sub
     Public Sub ShowHideVideoProperties(ByVal bShow As Boolean)
         ObjectPropertiesTabControl.TabPages.Item(4).PageVisible = bShow
+        ObjectProperties1.Enabled = bShow
         lcgObjectPropertiesVideo.Enabled = bShow
     End Sub
     Public Sub SelectObject(Optional ByVal setSelected As Boolean = True)
@@ -3077,8 +3078,8 @@ Partial Public Class CDAMain
                     ShowHideVideoProperties(False)
                     ShowHideObjectProperties(True)
                 Else
-                    ShowHideVideoProperties(True)
                     ShowHideObjectProperties(False)
+                    ShowHideVideoProperties(True)
                 End If
                 'StandardImageGalleryEdit.CheckedItems.Clear()
                 'HoverImageGalleryEdit.CheckedItems.Clear()
