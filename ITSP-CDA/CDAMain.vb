@@ -2463,7 +2463,7 @@ Partial Public Class CDAMain
                     Dim vidPath As String = "../videos/" & obj.VideoFile
                     sInnerHtml = "<video id='" & obj.ObjectName & "-vid' width='" & obj.Width.ToString & "' height='" & obj.Height.ToString & "'"
                     If obj.VideoAutoplay Then
-                        sInnerHtml = sInnerHtml & " autoplay='autoplay'"
+                        sInnerHtml = sInnerHtml & " autoplay='autoplay' muted='muted'"
                     Else
                         sInnerHtml = sInnerHtml & " controls='controls'"
                     End If
@@ -5368,7 +5368,7 @@ Partial Public Class CDAMain
                     Dim vidPath As String = vidfolder & obj.VideoFile
                     sInnerHtml = "<video id='" & TidyObjectName(obj.ObjectName) & "-vid' width='" & obj.Width.ToString & "' height='" & obj.Height.ToString & "'"
                     If obj.VideoAutoplay Then
-                        sInnerHtml = sInnerHtml & " autoplay='autoplay'"
+                        sInnerHtml = sInnerHtml & " autoplay='autoplay' muted='muted'"
                     Else
                         sInnerHtml = sInnerHtml & " controls='controls'"
                     End If
