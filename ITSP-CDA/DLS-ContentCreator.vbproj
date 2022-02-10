@@ -60,10 +60,10 @@
     <StartupObject>ITSP_CDA.My.MyApplication</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>0D64AACB6B199A78A1B48F6CAF754A4FF7C7FFC8</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>2E6DE4225FD58D7840DBB4FC3E3FD5ABE6D459B9</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>DLS-CC-key.pfx</ManifestKeyFile>
+    <ManifestKeyFile>DLS-ContentCreator_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -100,7 +100,7 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>DLS-CC-key.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>DLS-ContentCreator.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ClosedXML">
@@ -493,6 +493,8 @@
     </None>
     <None Include="ClassDiagram1.cd" />
     <None Include="DLS-CC-key.pfx" />
+    <None Include="DLS-ContentCreator.pfx" />
+    <None Include="DLS-ContentCreator_1_TemporaryKey.pfx" />
     <None Include="DLS-ContentCreator_TemporaryKey.pfx" />
     <None Include="My Project\DataSources\mstns.ITSPUnit.datasource" />
     <None Include="My Project\Settings.settings">

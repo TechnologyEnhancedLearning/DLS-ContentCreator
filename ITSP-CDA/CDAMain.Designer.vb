@@ -1025,8 +1025,10 @@
         '
         'btnPublish
         '
+        Me.btnPublish.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown
         Me.btnPublish.Caption = "Publish"
         Me.btnPublish.CategoryGuid = New System.Guid("a27d5c2d-9a6e-4b95-87b3-6fd28ed50899")
+        Me.btnPublish.DropDownControl = Me.PublishDD
         Me.btnPublish.Id = 4
         Me.btnPublish.ImageOptions.Image = CType(resources.GetObject("btnPublish.ImageOptions.Image"), System.Drawing.Image)
         Me.btnPublish.ImageOptions.LargeImage = CType(resources.GetObject("btnPublish.ImageOptions.LargeImage"), System.Drawing.Image)
