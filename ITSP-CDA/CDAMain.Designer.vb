@@ -156,6 +156,9 @@
         Me.btnSave = New DevExpress.XtraBars.BarButtonItem()
         Me.btnOpen = New DevExpress.XtraBars.BarButtonItem()
         Me.btnPublish = New DevExpress.XtraBars.BarButtonItem()
+        Me.PublishDD = New DevExpress.XtraBars.PopupMenu(Me.components)
+        Me.btnPublishITSP = New DevExpress.XtraBars.BarButtonItem()
+        Me.btnPublishSCORM = New DevExpress.XtraBars.BarButtonItem()
         Me.siModified = New DevExpress.XtraBars.BarButtonItem()
         Me.siDocName = New DevExpress.XtraBars.BarStaticItem()
         Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
@@ -186,6 +189,7 @@
         Me.btnAddCustomCSSBehaviour = New DevExpress.XtraBars.BarButtonItem()
         Me.btnAddCustomJSBehaviour = New DevExpress.XtraBars.BarButtonItem()
         Me.btnAddDragBehaviour = New DevExpress.XtraBars.BarButtonItem()
+        Me.btnAddExitLearningBehaviour = New DevExpress.XtraBars.BarButtonItem()
         Me.btnAddFollowMouseBehaviour = New DevExpress.XtraBars.BarButtonItem()
         Me.btnAddMarqueeBehaviour = New DevExpress.XtraBars.BarButtonItem()
         Me.btnAddMouseEventBehaviour = New DevExpress.XtraBars.BarButtonItem()
@@ -239,9 +243,6 @@
         Me.btnImportScriptRbn = New DevExpress.XtraBars.BarButtonItem()
         Me.btnImportAssessTemplateRbn = New DevExpress.XtraBars.BarButtonItem()
         Me.btnPublishRbn = New DevExpress.XtraBars.BarButtonItem()
-        Me.PublishDD = New DevExpress.XtraBars.PopupMenu(Me.components)
-        Me.btnPublishITSP = New DevExpress.XtraBars.BarButtonItem()
-        Me.btnPublishSCORM = New DevExpress.XtraBars.BarButtonItem()
         Me.btnPreviewView = New DevExpress.XtraBars.BarButtonItem()
         Me.btnInsertVideoHome = New DevExpress.XtraBars.BarButtonItem()
         Me.SkinBarSubItem1 = New DevExpress.XtraBars.SkinBarSubItem()
@@ -373,12 +374,12 @@
         CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem19, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NewPageDD, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PublishDD, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemTextEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemRadioGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PreviewDD, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ArrowDD, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ddInsertObject, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PublishDD, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemImageComboBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemPopupGalleryEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemPopupGalleryEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -458,10 +459,10 @@
         Me.rbnMain.ApplicationButtonDropDownControl = Me.itspBackstageView
         Me.rbnMain.Categories.AddRange(New DevExpress.XtraBars.BarManagerCategory() {New DevExpress.XtraBars.BarManagerCategory("File", New System.Guid("a27d5c2d-9a6e-4b95-87b3-6fd28ed50899")), New DevExpress.XtraBars.BarManagerCategory("Page", New System.Guid("b7e51064-857c-4788-8596-926468c1c488")), New DevExpress.XtraBars.BarManagerCategory("View", New System.Guid("bc68a3b7-6374-4ee1-b6df-c2fc155c4d5a")), New DevExpress.XtraBars.BarManagerCategory("Clipboard", New System.Guid("20dd4bbf-6751-483f-bdb4-623a4d98a878")), New DevExpress.XtraBars.BarManagerCategory("Objects", New System.Guid("134e64ad-b637-4707-82e8-3a71a71c85fc"))})
         Me.rbnMain.ExpandCollapseItem.Id = 0
-        Me.rbnMain.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.rbnMain.ExpandCollapseItem, Me.rbnMain.SearchEditItem, Me.btnPaste, Me.btnCut, Me.btnCopy, Me.btnNewPage, Me.btnZoomIn, Me.btnZoomOut, Me.btnSave, Me.btnOpen, Me.btnPublish, Me.siModified, Me.siDocName, Me.BarButtonItem1, Me.btnProjectSettings, Me.btnAddExpPage, Me.btnAddGuidePage, Me.btnAddDemoPage, Me.btnAddPracticePage, Me.btnAddTestPage, Me.btnDeletePage, Me.RibbonBackgroundGallery, Me.btnPasteImage, Me.BarEditItem1, Me.btnBrowseBkg, Me.btnEditBkg, Me.btnArrowRight, Me.btnArrowDown, Me.btnArrowLeft, Me.btnArrowUp, Me.btnNewProject, Me.btnHighlightBox, Me.btnPasteImageInsert, Me.btnBrowseInsert, Me.btnImagesPurge, Me.RibbonImageGallery, Me.radInsertImageType, Me.btnUndo, Me.btnRedo, Me.BarButtonItem4, Me.btnAddAnimateBehaviour, Me.btnAddCustomCSSBehaviour, Me.btnAddCustomJSBehaviour, Me.btnAddDragBehaviour, Me.btnAddFollowMouseBehaviour, Me.btnAddMarqueeBehaviour, Me.btnAddMouseEventBehaviour, Me.btnAddMousePointerBehaviour, Me.btnAddResizeBehaviour, Me.btnAddTextBehaviour, Me.btnInteractionArea, Me.btnTextArea, Me.btnAddKeyboardShortcutBH, Me.btnPreview, Me.btnPreviewAll, Me.btnPreviewFromPage, Me.btnPreviewThisPage, Me.btnAddPasswordBehaviour, Me.btnInsertVideo, Me.btnInsertQuizQuestion, Me.qatBtnSave, Me.btnQATPreview, Me.btnQATUndo, Me.btnHmRbnPasteBkg, Me.btnHmArrow, Me.btnHmQuiz, Me.btnHmPasteImage, Me.btnHmHighlight, Me.btnHmInteractionArea, Me.btnHmTextArea, Me.btnInsertStandardImage, Me.btnInsertRolloverImage, Me.btnInsertPreview, Me.btnPagePreview, Me.siSelectedType, Me.BarStaticItem1, Me.siName, Me.BarStaticItem2, Me.btnRbnPublish, Me.cbNavigationPane, Me.cbObjectList, Me.cbObjectProperties, Me.cbBehaviours, Me.cbBehaviourProperties, Me.cbPageProps, Me.btnAddSpinnerBehaviour, Me.btnAddTooltipBehaviour, Me.bsubThemeSelector, Me.btnAddSelectableBehaviour, Me.btnRefreshRbn, Me.btnProjectSettingsRbn, Me.btnImportScriptRbn, Me.btnImportAssessTemplateRbn, Me.btnPublishRbn, Me.btnPreviewView, Me.btnInsertVideoHome, Me.btnPublishITSP, Me.btnPublishSCORM, Me.SkinBarSubItem1})
+        Me.rbnMain.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.rbnMain.ExpandCollapseItem, Me.rbnMain.SearchEditItem, Me.btnPaste, Me.btnCut, Me.btnCopy, Me.btnNewPage, Me.btnZoomIn, Me.btnZoomOut, Me.btnSave, Me.btnOpen, Me.btnPublish, Me.siModified, Me.siDocName, Me.BarButtonItem1, Me.btnProjectSettings, Me.btnAddExpPage, Me.btnAddGuidePage, Me.btnAddDemoPage, Me.btnAddPracticePage, Me.btnAddTestPage, Me.btnDeletePage, Me.RibbonBackgroundGallery, Me.btnPasteImage, Me.BarEditItem1, Me.btnBrowseBkg, Me.btnEditBkg, Me.btnArrowRight, Me.btnArrowDown, Me.btnArrowLeft, Me.btnArrowUp, Me.btnNewProject, Me.btnHighlightBox, Me.btnPasteImageInsert, Me.btnBrowseInsert, Me.btnImagesPurge, Me.RibbonImageGallery, Me.radInsertImageType, Me.btnUndo, Me.btnRedo, Me.BarButtonItem4, Me.btnAddAnimateBehaviour, Me.btnAddCustomCSSBehaviour, Me.btnAddCustomJSBehaviour, Me.btnAddDragBehaviour, Me.btnAddExitLearningBehaviour, Me.btnAddFollowMouseBehaviour, Me.btnAddMarqueeBehaviour, Me.btnAddMouseEventBehaviour, Me.btnAddMousePointerBehaviour, Me.btnAddResizeBehaviour, Me.btnAddTextBehaviour, Me.btnInteractionArea, Me.btnTextArea, Me.btnAddKeyboardShortcutBH, Me.btnPreview, Me.btnPreviewAll, Me.btnPreviewFromPage, Me.btnPreviewThisPage, Me.btnAddPasswordBehaviour, Me.btnInsertVideo, Me.btnInsertQuizQuestion, Me.qatBtnSave, Me.btnQATPreview, Me.btnQATUndo, Me.btnHmRbnPasteBkg, Me.btnHmArrow, Me.btnHmQuiz, Me.btnHmPasteImage, Me.btnHmHighlight, Me.btnHmInteractionArea, Me.btnHmTextArea, Me.btnInsertStandardImage, Me.btnInsertRolloverImage, Me.btnInsertPreview, Me.btnPagePreview, Me.siSelectedType, Me.BarStaticItem1, Me.siName, Me.BarStaticItem2, Me.btnRbnPublish, Me.cbNavigationPane, Me.cbObjectList, Me.cbObjectProperties, Me.cbBehaviours, Me.cbBehaviourProperties, Me.cbPageProps, Me.btnAddSpinnerBehaviour, Me.btnAddTooltipBehaviour, Me.bsubThemeSelector, Me.btnAddSelectableBehaviour, Me.btnRefreshRbn, Me.btnProjectSettingsRbn, Me.btnImportScriptRbn, Me.btnImportAssessTemplateRbn, Me.btnPublishRbn, Me.btnPreviewView, Me.btnInsertVideoHome, Me.btnPublishITSP, Me.btnPublishSCORM, Me.SkinBarSubItem1})
         Me.rbnMain.Location = New System.Drawing.Point(0, 0)
         Me.rbnMain.Margin = New System.Windows.Forms.Padding(4)
-        Me.rbnMain.MaxItemId = 51
+        Me.rbnMain.MaxItemId = 52
         Me.rbnMain.MiniToolbars.Add(Me.RibbonMiniToolbar1)
         Me.rbnMain.Name = "rbnMain"
         Me.rbnMain.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.rbnHomeTab, Me.rbnProjectPage, Me.rbnViewTab})
@@ -1041,6 +1042,25 @@
         SuperToolTip6.Items.Add(ToolTipItem6)
         Me.btnPublish.SuperTip = SuperToolTip6
         '
+        'PublishDD
+        '
+        Me.PublishDD.ItemLinks.Add(Me.btnPublishITSP)
+        Me.PublishDD.ItemLinks.Add(Me.btnPublishSCORM)
+        Me.PublishDD.Name = "PublishDD"
+        Me.PublishDD.Ribbon = Me.rbnMain
+        '
+        'btnPublishITSP
+        '
+        Me.btnPublishITSP.Caption = "Publish Digital Learning Solutions"
+        Me.btnPublishITSP.Id = 47
+        Me.btnPublishITSP.Name = "btnPublishITSP"
+        '
+        'btnPublishSCORM
+        '
+        Me.btnPublishSCORM.Caption = "Publish SCORM 1.2"
+        Me.btnPublishSCORM.Id = 48
+        Me.btnPublishSCORM.Name = "btnPublishSCORM"
+        '
         'siModified
         '
         Me.siModified.Id = 5
@@ -1342,46 +1362,52 @@
         Me.btnAddDragBehaviour.Id = 28
         Me.btnAddDragBehaviour.Name = "btnAddDragBehaviour"
         '
+        'btnAddExitLearningBehaviour
+        '
+        Me.btnAddExitLearningBehaviour.Caption = "Exit Content"
+        Me.btnAddExitLearningBehaviour.Id = 29
+        Me.btnAddExitLearningBehaviour.Name = "btnAddExitLearningBehaviour"
+        '
         'btnAddFollowMouseBehaviour
         '
         Me.btnAddFollowMouseBehaviour.Caption = "Follow Mouse"
-        Me.btnAddFollowMouseBehaviour.Id = 29
+        Me.btnAddFollowMouseBehaviour.Id = 30
         Me.btnAddFollowMouseBehaviour.Name = "btnAddFollowMouseBehaviour"
         '
         'btnAddMarqueeBehaviour
         '
         Me.btnAddMarqueeBehaviour.Caption = "Marquee"
-        Me.btnAddMarqueeBehaviour.Id = 30
+        Me.btnAddMarqueeBehaviour.Id = 31
         Me.btnAddMarqueeBehaviour.Name = "btnAddMarqueeBehaviour"
         '
         'btnAddMouseEventBehaviour
         '
         Me.btnAddMouseEventBehaviour.Caption = "Mouse Interaction"
-        Me.btnAddMouseEventBehaviour.Id = 31
+        Me.btnAddMouseEventBehaviour.Id = 32
         Me.btnAddMouseEventBehaviour.Name = "btnAddMouseEventBehaviour"
         '
         'btnAddMousePointerBehaviour
         '
         Me.btnAddMousePointerBehaviour.Caption = "Mouse Pointer"
-        Me.btnAddMousePointerBehaviour.Id = 32
+        Me.btnAddMousePointerBehaviour.Id = 33
         Me.btnAddMousePointerBehaviour.Name = "btnAddMousePointerBehaviour"
         '
         'btnAddResizeBehaviour
         '
         Me.btnAddResizeBehaviour.Caption = "Resize"
-        Me.btnAddResizeBehaviour.Id = 33
+        Me.btnAddResizeBehaviour.Id = 34
         Me.btnAddResizeBehaviour.Name = "btnAddResizeBehaviour"
         '
         'btnAddTextBehaviour
         '
         Me.btnAddTextBehaviour.Caption = "Text Interaction"
-        Me.btnAddTextBehaviour.Id = 34
+        Me.btnAddTextBehaviour.Id = 35
         Me.btnAddTextBehaviour.Name = "btnAddTextBehaviour"
         '
         'btnInteractionArea
         '
         Me.btnInteractionArea.Caption = "Interaction Area"
-        Me.btnInteractionArea.Id = 35
+        Me.btnInteractionArea.Id = 36
         Me.btnInteractionArea.ImageOptions.Image = CType(resources.GetObject("btnInteractionArea.ImageOptions.Image"), System.Drawing.Image)
         Me.btnInteractionArea.ImageOptions.LargeImage = CType(resources.GetObject("btnInteractionArea.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnInteractionArea.Name = "btnInteractionArea"
@@ -1390,7 +1416,7 @@
         'btnTextArea
         '
         Me.btnTextArea.Caption = "Text Area"
-        Me.btnTextArea.Id = 36
+        Me.btnTextArea.Id = 37
         Me.btnTextArea.ImageOptions.Image = CType(resources.GetObject("btnTextArea.ImageOptions.Image"), System.Drawing.Image)
         Me.btnTextArea.Name = "btnTextArea"
         Me.btnTextArea.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
@@ -1398,7 +1424,7 @@
         'btnAddKeyboardShortcutBH
         '
         Me.btnAddKeyboardShortcutBH.Caption = "Keyboard Shortcut"
-        Me.btnAddKeyboardShortcutBH.Id = 37
+        Me.btnAddKeyboardShortcutBH.Id = 38
         Me.btnAddKeyboardShortcutBH.Name = "btnAddKeyboardShortcutBH"
         '
         'btnPreview
@@ -1794,25 +1820,6 @@
         SuperToolTip19.Items.Add(ToolTipItem19)
         Me.btnPublishRbn.SuperTip = SuperToolTip19
         '
-        'PublishDD
-        '
-        Me.PublishDD.ItemLinks.Add(Me.btnPublishITSP)
-        Me.PublishDD.ItemLinks.Add(Me.btnPublishSCORM)
-        Me.PublishDD.Name = "PublishDD"
-        Me.PublishDD.Ribbon = Me.rbnMain
-        '
-        'btnPublishITSP
-        '
-        Me.btnPublishITSP.Caption = "Publish Digital Learning Solutions"
-        Me.btnPublishITSP.Id = 47
-        Me.btnPublishITSP.Name = "btnPublishITSP"
-        '
-        'btnPublishSCORM
-        '
-        Me.btnPublishSCORM.Caption = "Publish SCORM 1.2"
-        Me.btnPublishSCORM.Id = 48
-        Me.btnPublishSCORM.Name = "btnPublishSCORM"
-        '
         'btnPreviewView
         '
         Me.btnPreviewView.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown
@@ -2123,7 +2130,7 @@
         Me.pnlObjectList.Location = New System.Drawing.Point(0, 0)
         Me.pnlObjectList.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlObjectList.Name = "pnlObjectList"
-        Me.pnlObjectList.OriginalSize = New System.Drawing.Size(342, 194)
+        Me.pnlObjectList.OriginalSize = New System.Drawing.Size(570, 194)
         Me.pnlObjectList.Size = New System.Drawing.Size(570, 194)
         Me.pnlObjectList.Text = "Object List"
         '
@@ -2166,7 +2173,7 @@
         Me.pnlObjectProps.Location = New System.Drawing.Point(0, 194)
         Me.pnlObjectProps.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlObjectProps.Name = "pnlObjectProps"
-        Me.pnlObjectProps.OriginalSize = New System.Drawing.Size(342, 194)
+        Me.pnlObjectProps.OriginalSize = New System.Drawing.Size(570, 194)
         Me.pnlObjectProps.Size = New System.Drawing.Size(570, 194)
         Me.pnlObjectProps.Text = "Object Properties"
         '
@@ -2714,7 +2721,7 @@
         Me.pnlBehaviours.Location = New System.Drawing.Point(0, 388)
         Me.pnlBehaviours.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlBehaviours.Name = "pnlBehaviours"
-        Me.pnlBehaviours.OriginalSize = New System.Drawing.Size(570, 151)
+        Me.pnlBehaviours.OriginalSize = New System.Drawing.Size(570, 207)
         Me.pnlBehaviours.Size = New System.Drawing.Size(570, 207)
         Me.pnlBehaviours.Text = "Behaviours List"
         '
@@ -2758,6 +2765,7 @@
         Me.AddBehaviourDD.ItemLinks.Add(Me.btnAddCustomCSSBehaviour)
         Me.AddBehaviourDD.ItemLinks.Add(Me.btnAddCustomJSBehaviour)
         Me.AddBehaviourDD.ItemLinks.Add(Me.btnAddDragBehaviour)
+        Me.AddBehaviourDD.ItemLinks.Add(Me.btnAddExitLearningBehaviour)
         Me.AddBehaviourDD.ItemLinks.Add(Me.btnAddFollowMouseBehaviour)
         Me.AddBehaviourDD.ItemLinks.Add(Me.btnAddKeyboardShortcutBH)
         Me.AddBehaviourDD.ItemLinks.Add(Me.btnAddMarqueeBehaviour)
@@ -2803,7 +2811,7 @@
         Me.pnlBehaviourProps.Location = New System.Drawing.Point(0, 595)
         Me.pnlBehaviourProps.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlBehaviourProps.Name = "pnlBehaviourProps"
-        Me.pnlBehaviourProps.OriginalSize = New System.Drawing.Size(570, 286)
+        Me.pnlBehaviourProps.OriginalSize = New System.Drawing.Size(570, 230)
         Me.pnlBehaviourProps.Size = New System.Drawing.Size(570, 230)
         Me.pnlBehaviourProps.Text = "Behaviour Properties"
         '
@@ -2978,12 +2986,12 @@
         CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem19, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NewPageDD, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PublishDD, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemTextEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemRadioGroup1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PreviewDD, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ArrowDD, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ddInsertObject, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PublishDD, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemImageComboBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemPopupGalleryEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemPopupGalleryEdit2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -3182,6 +3190,7 @@
     Friend WithEvents btnAddCustomCSSBehaviour As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btnAddCustomJSBehaviour As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btnAddDragBehaviour As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents btnAddExitLearningBehaviour As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btnAddFollowMouseBehaviour As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btnAddMarqueeBehaviour As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btnAddMouseEventBehaviour As DevExpress.XtraBars.BarButtonItem

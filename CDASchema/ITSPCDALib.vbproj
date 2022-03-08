@@ -77,6 +77,7 @@
     <Compile Include="mstns\CustomCssBehaviour.vb" />
     <Compile Include="mstns\CustomJavaScriptBehaviour.vb" />
     <Compile Include="mstns\DragBehaviour.vb" />
+    <Compile Include="mstns\ExitLearningBehaviour.vb" />
     <Compile Include="mstns\FollowMouseBehaviour.vb" />
     <Compile Include="mstns\IITSPUnit.vb" />
     <Compile Include="mstns\ITSPUnit.vb" />
