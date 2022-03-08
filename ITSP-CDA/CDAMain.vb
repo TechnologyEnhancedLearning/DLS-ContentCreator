@@ -3688,6 +3688,9 @@ Partial Public Class CDAMain
                         If Not bh.Selectable Is Nothing Then
                             listBehaviours.Items.Add("Selectable")
                         End If
+                        If Not bh.ExitLearning Is Nothing Then
+                            listBehaviours.Items.Add("Exit Content")
+                        End If
                     Next
                 End If
             End If
@@ -4049,6 +4052,10 @@ Partial Public Class CDAMain
                                     psb.Dock = DockStyle.Fill
                                     scrollableBehaviourProps.Controls.Add(psb)
                                 End If
+                            Case "ExitLearning"
+                                If Not bh.ExitLearning Is Nothing Then
+                                    scrollableBehaviourProps.Controls.Clear()
+                                End If
                         End Select
                         allowPreview = True
                     End If
@@ -4279,6 +4286,20 @@ Partial Public Class CDAMain
             Dim bhs As New mstns.Behaviours
             Dim bhsb As New mstns.SelectableBehaviour
             bhs.Selectable = bhsb
+            Dim obj As mstns.Object_ = GetObjectByName(selectedObjectID)
+            obj.BehaviourCol.Add(bhs)
+            ReloadControls(False, False, False, False, False, False, False, True)
+            listBehaviours.SelectedIndex = listBehaviours.ItemCount - 1
+            Modified = True
+        Catch ex As Exception
+            Dim strMsg As String = ex.Message.ToString()
+        End Try
+    End Sub
+    Private Sub btnExitLearningBehaviour_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnAddExitLearningBehaviour.ItemClick
+        Try
+            Dim bhs As New mstns.Behaviours
+            Dim bhelb As New mstns.ExitLearningBehaviour
+            bhs.ExitLearning = bhelb
             Dim obj As mstns.Object_ = GetObjectByName(selectedObjectID)
             obj.BehaviourCol.Add(bhs)
             ReloadControls(False, False, False, False, False, False, False, True)
@@ -5326,6 +5347,7 @@ Partial Public Class CDAMain
                 Dim sInnerHtml As String = ""
                 Dim sOuterHtml As String = ""
                 Dim sTitle As String = ""
+                Dim hasExitLearningBehaviour As Boolean = False
                 For Each bh As mstns.Behaviours In obj.BehaviourCol
                     If Not bh.Text_ Is Nothing Then
                         sInnerHtml = sInnerHtml + SetupTextBehaviour(bh.Text_, TidyObjectName(obj.ObjectName))
@@ -5362,6 +5384,8 @@ Partial Public Class CDAMain
                         sTitle = " data-iscor='" & bh.Selectable.CorrectWhenSelected.ToString() & "'"
                         htmlStyles = htmlStyles + jsgenerate.GenerateSelectableCSS(bh.Selectable, obj, pg)
                         sPageJS = sPageJS + jsgenerate.GenerateSelectableBehaviourJS(bh.Selectable, obj, pg)
+                    ElseIf Not bh.ExitLearning Is Nothing Then
+                        hasExitLearningBehaviour = True
                     End If
 
                 Next
@@ -5412,9 +5436,17 @@ Partial Public Class CDAMain
                         End If
                     End If
                 Next
+                If hasExitLearningBehaviour Then
+                    htmlObjects = htmlObjects & "<a href='javascript:exit_learning();' title='Exit content'>"
+                End If
                 htmlObjects = htmlObjects & "<div class='" & sClassList & "' id='"
 
-                htmlObjects = htmlObjects & TidyObjectName(obj.ObjectName) & "'" & sTitle & " >" & sInnerHtml & "</div>" & sOuterHtml
+                htmlObjects = htmlObjects & TidyObjectName(obj.ObjectName) & "'" & sTitle & " >" & sInnerHtml & "</div>"
+                If hasExitLearningBehaviour Then
+                    htmlObjects = htmlObjects & "</a>"
+                End If
+
+                htmlObjects = htmlObjects & sOuterHtml
 
             Next
             sPageJS = sPageJS + "function JudgeInteraction() {"

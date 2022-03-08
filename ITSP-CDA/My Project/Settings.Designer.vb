@@ -55,7 +55,7 @@ Partial Friend NotInheritable Class Settings
     
     <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.Configuration.DefaultSettingValueAttribute("1.25")>  _
+     Global.System.Configuration.DefaultSettingValueAttribute("1.26")>  _
     Public ReadOnly Property CurrentVersion() As Decimal
         Get
             Return CType(Me("CurrentVersion"),Decimal)
